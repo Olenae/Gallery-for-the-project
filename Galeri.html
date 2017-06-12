@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <title>perfume</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/swiper.js"></script>
+    <link rel="stylesheet" href="css/swiper.css">
+</head>
+<body>
+   <!--       Галерея     -->
+<!--
+        <div class="gallery-wrapper">
+            <div class="parfume-gallery">
+                <div class="parfume">
+                    <div class="product-img"><img src="img/perfume01.png" alt="parfume01"></div>
+                    <h3>Davidoff</h3>
+                    <h4>Women’s Perfume</h4>
+                    <h5>$ 200.00</h5>
+                </div>
+                <div class="parfume">
+                    <div class="product-img">
+                        <img src="img/perfume02.png" alt="parfume02"></div>
+                    <h3>Davidoff</h3>
+                    <h4>men’s Perfume</h4>
+                    <h5>$ 200.00</h5>
+                </div>
+                <div class="parfume">
+                    <div class="product-img">
+                        <img src="img/perfume03.png" alt="parfume03"></div>
+                    <h3>Davidoff</h3>
+                    <h4>men’s Perfume</h4>
+                    <h5>$ 200.00</h5>
+                </div>
+                <div class="parfume">
+                    <div class="product-img">
+                        <img src="img/perfume04.png" alt="parfume04"></div>
+                    <h3>Davidoff</h3>
+                    <h4>Women’s Perfume</h4>
+                    <h5>$ 200.00</h5>
+                </div>
+                <div class="parfume">
+                    <div class="product-img">
+                        <img src="img/perfume05.png" alt="parfume05"></div>
+                    <h3>Davidoff</h3>
+                    <h4>men’s Perfume</h4>
+                    <h5>$ 200.00</h5>
+                </div>
+            </div>
+        </div>
+-->
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><div class="parfume">
+                    <div class="product-img"><img src="img/perfume01.png" alt="parfume01"></div>
+                    <h3>Davidoff</h3>
+                    <h4>Women’s Perfume</h4>
+                    <h5>$ 200.00</h5>
+                </div> </div>
+            <div class="swiper-slide"><div class="parfume">
+                    <div class="product-img">
+                        <img src="img/perfume02.png" alt="parfume02"></div>
+                    <h3>Davidoff</h3>
+                    <h4>men’s Perfume</h4>
+                    <h5>$ 200.00</h5>
+                </div> </div>
+            <div class="swiper-slide"><div class="parfume">
+                    <div class="product-img">
+                        <img src="img/perfume03.png" alt="parfume03"></div>
+                    <h3>Davidoff</h3>
+                    <h4>men’s Perfume</h4>
+                    <h5>$ 200.00</h5>
+                </div></div>
+            <div class="swiper-slide"><div class="parfume">
+                    <div class="product-img">
+                        <img src="img/perfume04.png" alt="parfume04"></div>
+                    <h3>Davidoff</h3>
+                    <h4>Women’s Perfume</h4>
+                    <h5>$ 200.00</h5>
+                </div></div>
+            <div class="swiper-slide"><div class="parfume">
+                    <div class="product-img">
+                        <img src="img/perfume05.png" alt="parfume05"></div>
+                    <h3>Davidoff</h3>
+                    <h4>men’s Perfume</h4>
+                    <h5>$ 200.00</h5>
+                </div></div>
+        </div>
+        <!-- Add Pagination -->
+        
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+    
+    <!-- Swiper JS -->
+    <script src="../dist/js/swiper.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+    var appendNumber = 4;
+    var prependNumber = 1;
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        slidesPerView: 4,
+//        centeredSlides: true,
+        paginationClickable: true,
+        spaceBetween: 30,
+    });
+    document.querySelector('.prepend-2-slides').addEventListener('click', function (e) {
+        e.preventDefault();
+        swiper.prependSlide([
+            '<div class="swiper-slide">Slide ' + (--prependNumber) + '</div>',
+            '<div class="swiper-slide">Slide ' + (--prependNumber) + '</div>'
+        ]);
+    });
+    document.querySelector('.prepend-slide').addEventListener('click', function (e) {
+        e.preventDefault();
+        swiper.prependSlide('<div class="swiper-slide">Slide ' + (--prependNumber) + '</div>');
+    });
+    document.querySelector('.append-slide').addEventListener('click', function (e) {
+        e.preventDefault();
+        swiper.appendSlide('<div class="swiper-slide">Slide ' + (++appendNumber) + '</div>');
+    });
+    document.querySelector('.append-2-slides').addEventListener('click', function (e) {
+        e.preventDefault();
+        swiper.appendSlide([
+            '<div class="swiper-slide">Slide ' + (++appendNumber) + '</div>',
+            '<div class="swiper-slide">Slide ' + (++appendNumber) + '</div>'
+        ]);
+    });
+    </script>
+</body>
+</html>
